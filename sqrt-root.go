@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(math.Sqrt(11))
+	fmt.Println(math.Pi)
 }
