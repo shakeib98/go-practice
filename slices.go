@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//slices are like reference to arrays
+
 func main() {
 	arr := [5]int{1, 2, 3, 4, 5}
 
@@ -11,6 +13,7 @@ func main() {
 
 	functionTwo()
 	functionThree()
+	structSlic()
 }
 
 func functionTwo() {
@@ -33,6 +36,16 @@ func functionTwo() {
 
 }
 
+func structSlic() {
+	a := []struct {
+		name string
+	}{
+		{"Shakeib"},
+	}
+
+	fmt.Println(a)
+}
+
 func functionThree() {
 	s := []int{2, 3, 5, 7, 11, 13}
 	printSlice(s)
@@ -48,8 +61,16 @@ func functionThree() {
 	// Drop its first two values.
 	s = s[2:]
 	printSlice(s)
+
+	var x []int
+	printSlice(x)
 }
 
 func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+	if s == nil {
+		fmt.Println("nil!")
+	} else {
+		fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+	}
+
 }
